@@ -9,11 +9,17 @@ import {
   Typography,
 } from "@mui/material";
 import { startLogout } from "../../store/auth/thunks";
+import { unsetActiveNote } from "../../store/journal";
 
 export const NavBar = ({ drawerWidth = 240 }) => {
   const dispatch = useDispatch();
+
   const onLogout = () => {
     dispatch(startLogout());
+  };
+
+  const onUnsetActiveNote = () => {
+    dispatch(unsetActiveNote());
   };
 
   return (
@@ -39,7 +45,13 @@ export const NavBar = ({ drawerWidth = 240 }) => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Typography variant="h6" noWrap component="div">
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            onClick={onUnsetActiveNote}
+            sx={{ cursor: "pointer" }}
+          >
             JournalApp
           </Typography>
           <Tooltip title="Logout">
