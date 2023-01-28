@@ -1,5 +1,5 @@
 export const getGifUrl = async ({ word }) => {
-  const apiKey = "FV5YTv6aTkPH2iySfDOIJZufJMJRNlbK";
+  const apiKey = "YOUR API KEY";
   const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${word}&limit=1`;
 
   const res = await fetch(apiUrl);
