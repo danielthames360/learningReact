@@ -27,6 +27,7 @@ const createUser = async (req = request, res = response) => {
 
     res.status(201).json({ ok: true, uid: user.id, name: user.name, token });
   } catch (error) {
+    console.log(error);
     res.status(500).json({
       ok: false,
       msg: "Please talk with the administrator",
@@ -58,6 +59,8 @@ const loginUser = async (req = request, res = response) => {
 
     res.json({ ok: true, uid: user.id, name: user.name, token });
   } catch (error) {
+    console.log(error);
+
     res.status(500).json({
       ok: false,
       msg: "Please talk with the administrator",
