@@ -3,6 +3,7 @@ import { status } from "../helpers/taskStatus";
 // import { TodoItem } from "../components/TodoItem";
 import { useState } from "react";
 import { TodoList } from "../components/TodoList";
+import { TodoContext } from "../../store/TodoContext";
 
 export const TodoPage = () => {
   const [todoList, setTodoList] = useState([]);
@@ -42,7 +43,9 @@ export const TodoPage = () => {
             />
           </div>
           <div className="mt-12 h-2/3 overflow-y-scroll">
-            <TodoList todoList={todoList} setTodoList={setTodoList} />
+            <TodoContext.Provider value={{ todoList, setTodoList }}>
+              <TodoList />
+            </TodoContext.Provider>
           </div>
         </div>
       </div>

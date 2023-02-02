@@ -1,7 +1,11 @@
 import { XIcon } from "/src/assets/icons";
 import { status as Status } from "../helpers/taskStatus";
+import { useContext } from "react";
+import { TodoContext } from "../../store/TodoContext";
 
-export const TodoItem = ({ id, title, status, setTodoList }) => {
+export const TodoItem = ({ id, title, status }) => {
+  const { setTodoList } = useContext(TodoContext);
+
   const onDelete = () => {
     setTodoList((prevItems) => prevItems.filter((item) => item.id !== id));
   };
