@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { TodoItem } from "./TodoItem";
-import { TodoContext } from "../../store/TodoContext";
+import { TodoContext } from "../../context/TodoContext";
 
 export const TodoList = () => {
-  const { todoList, setTodoList } = useContext(TodoContext);
+  const { todoList } = useContext(TodoContext);
 
   return (
     <ul>

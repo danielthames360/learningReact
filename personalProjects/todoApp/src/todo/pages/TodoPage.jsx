@@ -1,12 +1,12 @@
 import { BarsIcon } from "/src/assets/icons";
 import { status } from "../helpers/taskStatus";
 // import { TodoItem } from "../components/TodoItem";
-import { useState } from "react";
 import { TodoList } from "../components/TodoList";
-import { TodoContext } from "../../store/TodoContext";
+import { useContext } from "react";
+import { TodoContext } from "../../context/TodoContext";
 
 export const TodoPage = () => {
-  const [todoList, setTodoList] = useState([]);
+  const { setTodoList, todoList } = useContext(TodoContext);
 
   const onAddTodo = (event) => {
     if (event.key === "Enter") {
@@ -43,9 +43,7 @@ export const TodoPage = () => {
             />
           </div>
           <div className="mt-12 h-2/3 overflow-y-scroll">
-            <TodoContext.Provider value={{ todoList, setTodoList }}>
-              <TodoList />
-            </TodoContext.Provider>
+            <TodoList />
           </div>
         </div>
       </div>
