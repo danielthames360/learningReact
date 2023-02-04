@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3 {
+  color: rgb(54, 54, 54);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  transition: all 0.5s ease;
+}
+
+.library-active {
+  margin-left: 30%;
+}
+
+@import "./player";
+@import "./song";
+@import "./library";
+@import "./nav";
